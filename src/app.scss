@@ -7,11 +7,13 @@
     background-color: lightsalmon;
     position: relative;
     top: 70px;
-    scroll-snap-type:y mandatory;
-    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; //for firefox
+    &::-webkit-scrollbar{display: none;}
 
     > *{
-      width: 98.8vw;
+      width: 100vw;
       height: calc(100vh - 70px);
       scroll-snap-align: start;
     }
