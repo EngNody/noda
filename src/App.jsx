@@ -7,6 +7,7 @@ import Contact from "./components/contact/Contact";
 import "./app.scss"
 
 function App() {
+  
   return (
     <div className="app">
     <Topbar/>
