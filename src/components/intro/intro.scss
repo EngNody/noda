@@ -3,21 +3,20 @@ background-color: white;
 display: flex;
 
 .left{
+  // border: 2px solid blue;
 flex: 0.5;
 
 .imgcontainer{
-  // border: 2px solid red;
-  width: 100%;
+  // border: 5px solid red;
+  width: 90%;
   height: 80%;
 overflow: hidden;
 border-radius: 50%;
-margin-top: 50px;
 justify-content: center;
-// align-items: flex-end;
-
+margin: 50px auto;
 
    img{
-    // border: 2px solid blue;
+    // border: 5px solid blue;
     width: 100%;
     height: 100%;
   }
@@ -26,6 +25,54 @@ justify-content: center;
 
 .right{
   flex: 0.5;
+  position: relative;
+
+  .wrapper{
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1{
+      font-size: 60px;
+      margin: 10px 0;
+    }
+    h2{
+      font-size: 35px;
+    }
+    .hehe{
+      // border: 2px solid red;
+
+    h3{
+      font-size: 30px;
+      display: flex;
+      flex-direction: row;
+
+      span{
+        font-size: inherit;
+        color: crimson;
+        margin-left: 5px;
+        }
+      }
+    }
+  }
+  a{
+    position: absolute;
+    bottom: 10px;
+    left: 40%;
+
+    img{
+      width: 30px;
+      animation: arrowBlink 2s infinite;
+    }
+    @keyframes arrowBlink {
+      100%{
+        opacity: 0;
+      }
+    }
+  }
 }
 
 
