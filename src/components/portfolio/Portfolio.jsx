@@ -1,15 +1,47 @@
-import "./portfolio.scss"
 
-const Portfolio = () => {
+// import portfoliolist from "../portfoliolist/Portfoliolist";
+// import { useState } from "react";
+import {useEffect,useState} from "react";
+import Fefalist from "../fefalist/Fefalist"
+import "./portfolio.scss";
+
+export default function Portfolio() {
+
+  const [selected,setselected]=useState("featured");
+  const list = [
+    {
+      id:"featured",
+      title:"Featured",
+    },
+    {
+      id: "web",
+      title: "Web App",
+    },
+    {
+      id: "mobile"
+      ,title: "Mobile",
+    },
+    {
+      id: "design",
+      title: "Design",
+    },
+    {
+      id: "content",
+      title: "Content",
+    }
+  ];
+
   return (
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
       <ul>
-      <li className="active">Featured</li>
-      <li>Web App</li>
-      <li>Mobile App</li>
-      <li>Design</li>
-      <li>Branding</li>
+
+      {list.map((item) => (
+        <Fefalist title={item.title} active={selected === item.id} 
+        setselected={setselected} id={item.id}/>
+
+        ))}
+
       </ul>
       <div className="container">
       <div className="item">
@@ -43,4 +75,3 @@ const Portfolio = () => {
   );
 }
 
-export default Portfolio;
