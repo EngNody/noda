@@ -5,7 +5,7 @@ const Portfolio = () => {
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
       <ul>
-      <li>Featured</li>
+      <li className="active">Featured</li>
       <li>Web App</li>
       <li>Mobile App</li>
       <li>Design</li>
@@ -16,6 +16,28 @@ const Portfolio = () => {
       <img src="assets/teck3.jpg" alt="" />
       <h3>Banking App</h3>
       </div>
+      <div className="item">
+      <img src="assets/teck3.jpg" alt="" />
+      <h3>Banking App</h3>
+      </div>
+      <div className="item">
+      <img src="assets/teck3.jpg" alt="" />
+      <h3>Banking App</h3>
+      </div>
+      <div className="item">
+      <img src="assets/teck3.jpg" alt="" />
+      <h3>Banking App</h3>
+      </div>
+      <div className="item">
+      <img src="assets/teck3.jpg" alt="" />
+      <h3>Banking App</h3>
+      </div>
+      <div className="item">
+      <img src="assets/teck3.jpg" alt="" />
+      <h3>Banking App</h3>
+      </div>
+
+
       </div>
     </div>
   );
