@@ -4,10 +4,13 @@
 import {useEffect,useState} from "react";
 import Fefalist from "../fefalist/Fefalist"
 import "./portfolio.scss";
+import {featuredfefa,webfefa,mobilefefa,designfefa,contentfefa} from "../../data"
 
 export default function Portfolio() {
 
-  const [selected,setselected]=useState("featured");
+  const [selected, setSelected] = useState("featured");
+  const [data, setData ] = useState([]);
+
   const list = [
     {
       id:"featured",
@@ -30,6 +33,32 @@ export default function Portfolio() {
       title: "Content",
     }
   ];
+  useEffect(()=>{
+
+switch (selected) {
+  case "featured":
+    setData(featuredfefa);
+    break;
+
+    case "web":
+      setData(webfefa);
+      break;
+
+      case "mobile":
+        setData(mobilefefa);
+        break;
+
+        case "design":
+          setData(designfefa);
+          break;
+          case "content":
+            setData(contentfefa);
+            break;
+  default:
+    setData(featuredfefa);
+    break;
+}
+  },[selected])
 
   return (
     <div className="portfolio" id="portfolio">
@@ -38,40 +67,42 @@ export default function Portfolio() {
 
       {list.map((item) => (
         <Fefalist title={item.title} active={selected === item.id} 
-        setselected={setselected} id={item.id}/>
-
+        setSelected={setSelected} id={item.id}/>
         ))}
 
       </ul>
       <div className="container">
-      <div className="item">
-      <img src="assets/teck3.jpg" alt="" />
-      <h3>Banking App</h3>
-      </div>
-      <div className="item">
-      <img src="assets/teck3.jpg" alt="" />
-      <h3>Banking App</h3>
-      </div>
-      <div className="item">
-      <img src="assets/teck3.jpg" alt="" />
-      <h3>Banking App</h3>
-      </div>
-      <div className="item">
-      <img src="assets/teck3.jpg" alt="" />
-      <h3>Banking App</h3>
-      </div>
-      <div className="item">
-      <img src="assets/teck3.jpg" alt="" />
-      <h3>Banking App</h3>
-      </div>
-      <div className="item">
-      <img src="assets/teck3.jpg" alt="" />
-      <h3>Banking App</h3>
-      </div>
 
-
+    {data.map((d) => (
+      <div className="item" id={d.id} key={d.id}>
+      <img src={d.img} alt={d.title}/>
+      <h3>{d.title}</h3>
+      </div>
+    ))}
       </div>
     </div>
+    
   );
 }
 
+
+// <div className="item">
+// <img src="assets/teck3.jpg" alt="" />
+// <h3>Banking App</h3>
+// </div>
+// <div className="item">
+// <img src="assets/teck3.jpg" alt="" />
+// <h3>Banking App</h3>
+// </div>
+// <div className="item">
+// <img src="assets/teck3.jpg" alt="" />
+// <h3>Banking App</h3>
+// </div>
+// <div className="item">
+// <img src="assets/teck3.jpg" alt="" />
+// <h3>Banking App</h3>
+// </div>
+// <div className="item">
+// <img src="assets/teck3.jpg" alt="" />
+// <h3>Banking App</h3>
+// </div>
