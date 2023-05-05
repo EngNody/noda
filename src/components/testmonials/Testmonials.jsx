@@ -33,8 +33,8 @@ const Testmonials = () => {
 
        <div className="container">
 
-    {data.map((d) => ( 
-      <div className={d.featured ? "card featured" : "card"}>
+    {data.map((d,i) => ( 
+      <div className={d.featured ? "card featured" : "card"} id={d.id} key={i}>
         <div className="top">
         <img className="left" src="assets/right.jpg" alt="" /> 
         <img className="user" src={d.img} alt="" />

@@ -65,16 +65,16 @@ switch (selected) {
       <h1>Portfolio</h1>
       <ul>
 
-      {list.map((item) => (
+      {list.map((item,i) => (
         <Fefalist title={item.title} active={selected === item.id} 
-        setSelected={setSelected} id={item.id}/>
+        setSelected={setSelected} id={item.id} key={i}/> 
         ))}
 
       </ul>
       <div className="container">
 
-    {data.map((d) => (
-      <div className="item" id={d.id} key={d.id}>
+    {data.map((d,i) => (
+      <div className="item" id={d.id} key={i}>
       <img src={d.img} alt={d.title}/>
       <h3>{d.title}</h3>
       </div>

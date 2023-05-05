@@ -7,39 +7,36 @@ const Works = () => {
   const [currentSlider,setCurrentSlider] = useState(0);
   const data=[
     {      
-    id:"1",
+    id:"0",
     icon:"assets/globe.jpg",
     title:"Web Design",
     desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     img:"assets/web2.jpg",},
     {    
-    id:"2",
+    id:"1",
     icon:"assets/mobile3.jpg",
     title:"Mobile Application",
     desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     img:"assets/oip (7).jpg",},
     {
-      id:"3",
+      id:"2",
       icon:"assets/writting3.jpg",
       title:"Branding",
       desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       img:"assets/web.jpg",
     }
   ]
-const handleClick =(way)=>{
+const handleClick=(way)=>{
   way === "left" ? setCurrentSlider(currentSlider > 0 ? currentSlider-1 : 2):
   setCurrentSlider(currentSlider<data.length -1 ?currentSlider +1 :0)
-
 }
-
   return (
     <div className="works" id="works">
 
     <div className="slider"
      style={{transform: `translateX(-${currentSlider * 100}vw)`}}>
-{ data.map((d) => (
-   
-    <div className="container">
+{ data.map((d,i) => (
+    <div className="container" id={d.id} key={i}>
     <div className="item">
       <div className="left">
       <div className="leftcontainer">
